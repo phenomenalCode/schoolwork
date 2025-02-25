@@ -1,0 +1,410 @@
+/* Here's a cheat sheet for various media queries that you can use in your CSS to create responsive designs:
+
+Screen Width:
+@media (max-width: 600px) { ... }
+@media (min-width: 601px) { ... }
+@media (min-width: 600px) and (max-width: 900px) { ... }
+Screen Height:
+@media (max-height: 600px) { ... }
+@media (min-height: 601px) { ... }
+@media (min-height: 600px) and (max-height: 900px) { ... }
+Device Orientation:
+@media (orientation: portrait) { ... }
+@media (orientation: landscape) { ... }
+Device Resolution:
+@media (resolution: 300dpi) { ... }
+@media (min-resolution: 300dpi) { ... }
+@media (max-resolution: 300dpi) { ... }
+Device Type:
+@media (pointer: none)
+@media (hover: hover) */
+
+body {
+    background-color: #131313;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.header {
+    background-image: url("460981201_1046222880839876_6171736717241604387_n.jpg"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+.menu {
+    display: none; /* Hide by default */
+    position: fixed; /* Fix the menu at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5d000b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    border-radius: 5px;
+}
+.fas.fa-bars {
+    display: flex;
+    font-size: 20px; /* Enlarged text */
+    margin: 5px 0;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    transition: background-color 0.2s, transform 0.2s}
+.searchbar {
+    position: relative; /* Correctly position the search icon */
+    left: 515px;
+}
+.fas.fa-search {
+    position: relative; /* Correctly position the search icon */
+    left: 570px;
+}
+.icon {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Push the icon section to the left */
+}
+
+.menu i {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.icon input[type="search"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center links inside navbar */
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar a {
+    color: rgb(245, 241, 241);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* Search Bar Section */
+.search-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.search input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    position: top;
+    justify-content: left;
+}
+
+/* Form Section */
+.form-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-input {
+    margin-bottom: 20px;
+}
+
+label {
+    background-color: dimgray;
+    padding: 5px;
+    display: inline-block;
+}
+
+.fas.fa-search{
+    justify-content: right;
+    position: auto;
+}
+.fas.fa-bars
+.menu-btn {
+    background-color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    justify-content: left;
+}
+
+.menu-btn:hover{
+    background-color: #ffffff;
+    
+}.menu-btn {
+    background-color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    justify-content: left;
+    position: absolute;
+    left: 5%; /* Move button to the far left */
+}
+
+.menu-btn:hover {
+    background-color: #ffffff;
+}
+
+.menu-container {
+    display: none;
+    background-color: #fffdfe;
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    z-index: 100;
+    top: 60px; /* Adjust as needed */
+    left: 5%; /* Move menu to the far left */
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu-container.active {
+    display: block; /* Show the menu when 'active' class is added */
+}
+
+#menu-container button {
+    display: flex;
+    font-size: 20px; /* Enlarged text */
+    margin: 5px 0;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    transition: background-color 0.2s, transform 0.2s;
+    border-radius: 5px;
+}
+
+.menu-container button:hover {
+    background-color: #84bbe5;
+    transform: scale(1.05);
+}
+
+.menu-container button::after {
+    content: ">";
+    font-weight: bold;
+    color: #333;
+    margin-left: auto; /* Pushes arrow to the far right */
+}
+
+
+/* Additional Sections */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.container3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(99, 0, 0);
+}
+.section {
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    color: #000000; 
+    width: calc(25% - 40px); /* 4 sections in a row */
+    box-sizing: border-box;
+}
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px; 
+    align-items: center;
+}
+
+.section2 {
+    background-color: #000000;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.section2 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.first-gym-h1 {
+    color: rgb(255, 255, 255); /* Corrected property for text color */
+    
+}
+
+.first-gym-text {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        height: 40vh; /* Adjust height for smaller screens */
+        padding: 10px;
+    }
+    .section {
+        width: calc(50% - 40px); /* 2 sections in a row */
+    }
+    .section2 {
+        width: calc(50% - 40px); /* 2 sections in a row */
+    }
+  
+   
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 30vh; /* Adjust height for smaller screens */
+        padding: 5px;
+    }
+    .section,
+    .section2 {
+        width: calc(100% - 40px); /* 1 section in a row */
+    }
+    .search-section
+    {
+        margin: 5px 0; /* Stack navbar links vertically */
+        padding: 5px;
+    }
+}
+@media (min-width: 768px) {
+    .navbar {
+        display: flex; /* Always visible on larger screens */
+    }
+}
+@media (max-width: 768px) {
+    /* On smaller screens, hide navbar by default */
+    .navbar {
+        display: none; /* Hide the navbar */
+        flex-direction: column;
+        width: 100%;
+    }}
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Media Queries for Images */
+    @media (max-width: 768px) {
+        .header {
+            background-size: contain; /* Ensure full visibility on smaller screens */
+            height: 40vh;
+        }
+    
+        .section img,
+        .section2 img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .header {
+            background-size: cover;
+            height: 30vh;
+        }
+    
+        .section img,
+        .section2 img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    
+    /* Ensure background images scale well */
+    @media (max-width: 600px) {
+        .header {
+            background-size: cover;
+            background-position: center;
+        }
+    }
+     
+.content img {
+    max-width: 200%;  /* Reduce size to 70% of container */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the images */
+}
+
+/* Further reduce size on smaller screens */
+@media (max-width: 768px) {
+     
+    #content img {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+     
+    #content img {
+        max-width: 50%;
+    }
+}
