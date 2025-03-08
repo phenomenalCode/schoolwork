@@ -1,130 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Recipe Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Recipe Library</title>
 </head>
 <body>
-  <h1>Recipe Library</h1>
-  <section class="filters">
-    <div>
-      <h2>Filter on kitchen</h2>
-      <button type="button" class="filter" id="all-btn">All</button>
-      <button type="button" class="filter" id="italy-btn">Italy</button>
-      <button type="button" class="filter" id="usa-btn">USA</button>
-      <button type="button" class="filter" id="china-btn">China</button>
-      <button type="button" class="filter" id="vegetarian-btn">Vegetarian</button>
-    </div>
-    <div>
-      <h2>Sort on time</h2>
-      <button class="sort" id="hightolow">Cooking time</button>
-      <button class="sort" id="high-to-low">Popularity</button>
-      <button class="sort" id="low-to-high">Price</button>
-    </div>
-  </section>
-  <section class="recipes">
-    <!-- First row -->
-    <section class="card" id="usa">
-      <img src="sc2020-102.jpg" />
-      <h2>American BBQ</h2>
-      <hr />
-      <p class="details">
-        <span class="bold">Cuisine: </span>American
-      </p>
-      <p class="details">
-        <span class="bold">Time: </span>1h 30min
-      </p>
-      <hr />
-      <div class="ingredients">
-        <p class="details bold">Ingredients</p>
-        <ul>
-          <li>COW</li>
-          <li>1/2 teaspoon coarse salt</li>
-          <li>2lbs beef</li>
-          <li>BBQ sauce</li>
-          <li>1/4 teaspoon freshly ground black pepper</li>
-          <li>1 clove Garlic</li>
-        </ul>
-      </div>
+    <h1>Recipe Library</h1>
+    <section class="filters">
+        <div>
+            <h2>Filter on kitchen</h2>
+            <button type="button" class="filter" id="all-btn">All</button>
+            <button type="button" class="filter" id="italy-btn">Italian</button>
+            <button type="button" class="filter" id="usa-btn">American</button>
+            <button type="button" class="filter" id="asia-btn">Asian</button>
+            <button type="button" class="filter" id="china-btn">Chinese</button>
+            <button type="button" class="filter" id="vegetarian-btn">Vegetarian</button>
+        </div>
+        <div>
+            <h2>Sort on time</h2>
+            <button class="sort" id="hightolowbtn">Cooking time</button>
+            <button type="button" class="filter" id="popular-btn">Popularity</button>
+            <button class="sort" id="sort-price-btn">Price</button>
+        </div>
     </section>
-
-    <section class="card" id="china">
-      <img src="shengjianbao-1ab387871fee494ab631b5b210d10a16.jpg" />
-      <h2>Dumplings</h2>
-      <hr />
-      <p class="details">
-        <span class="bold">Cuisine: </span>Chinese
-      </p>
-      <p class="details">
-        <span class="bold">Time: </span>1h 30min
-      </p>
-      <hr />
-      <div class="ingredients">
-        <p class="details bold">Ingredients</p>
-        <ul>
-          <li>Chicken</li>
-          <li>1/2 teaspoon coarse salt and pepper</li>
-          <li>Chicken</li>
-          <li>Soy sauce dip</li>
-          <li>Flour</li>
-          <li>Onion</li>
-        </ul>
-      </div>
+    <section class="recipes" id="container">
+        <!-- Recipe cards will be dynamically added here -->
     </section>
-
-    <!-- Second row -->
-    <section class="card" id="usa">
-      <img src="R.jpg" />
-      <h2>American Hamburger</h2>
-      <hr />
-      <p class="details">
-        <span class="bold">Cuisine: </span>American
-      </p>
-      <p class="details">
-        <span class="bold">Time: </span>1h 30min
-      </p>
-      <hr />
-      <div class="ingredients">
-        <p class="details bold">Ingredients</p>
-        <ul>
-          <li>COW</li>
-          <li>1/2 teaspoon coarse salt</li>
-          <li>Beef patty</li>
-          <li>Ketchup</li>
-          <li>1/4 teaspoon freshly ground black pepper</li>
-          <li>Cheese</li>
-          <li>Salad</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="card" id="italy">
-      <img src="Pasta-Arrabbiata-2-1200px-Inside-the-Rustic-Kitchen-1-1.jpg" />
-      <h2>Italian Pasta</h2>
-      <hr />
-      <p class="details">
-        <span class="bold">Cuisine: </span>Italian
-      </p>
-      <p class="details">
-        <span class="bold">Time: </span>1h 30min
-      </p>
-      <hr />
-      <div class="ingredients">
-        <p class="details bold">Ingredients</p>
-        <ul>
-          <li>Pasta</li>
-          <li>1/2 teaspoon coarse salt</li>
-          <li>Tomato</li>
-          <li>Olive oil</li>
-          <li>1/4 teaspoon freshly ground black pepper</li>
-          <li>1 clove Garlic</li>
-        </ul>
-      </div>
-    </section>
-  </section>
-  <script src="cook.js"></script>
-  
+    <script src="cook.js"></script>
+    <script src="api.js"></script>
 </body>
 </html>
