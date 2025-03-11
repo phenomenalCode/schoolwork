@@ -2,7 +2,7 @@
 
 // Key and values for filter buttons
 const obj = {
-     "china-btn": "chinese",
+    "china-btn": "chinese",
     "italy-btn": "italian",
     "usa-btn": "american",
     "all-btn": "all",
@@ -11,9 +11,7 @@ const obj = {
     "vegetarian-btn": "vegetarian",
     "hightolowbtn": "hightolow",
     "sort-price-btn": "sort-price"
-    
 };
-
 
 Object.keys(obj).forEach(buttonId => {
   const button = document.getElementById(buttonId);
@@ -51,7 +49,7 @@ Object.keys(obj).forEach(buttonId => {
 });
 
 
-// Example clock function to display the current time in the console
+// Example clock function to display the current time in the console. not being used right now 
 const clock = () => {
     let currentTime = new Date(); //to get the current time
     let hrs = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours(); //to display hours and give double digit output
