@@ -10,7 +10,8 @@ const obj = {
     "popular-btn": "popular",
     "vegetarian-btn": "vegetarian",
     "hightolowbtn": "hightolow",
-    "sort-price-btn": "sort-price"
+    "sort-price-btn": "sort-price",
+    "random-btn": "random"
 };
 
 Object.keys(obj).forEach(buttonId => {

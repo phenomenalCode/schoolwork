@@ -1,8 +1,11 @@
 const YOUR_API_KEY = "67f9082ad89f4a5dbe3f592aca788d38";
 const URL = `https://api.spoonacular.com/recipes/random?number=4&apiKey=${YOUR_API_KEY}`; // Fetch 4 recipes
 let recipes = [];
-
+// Fetch recipes from the API STANDARD FETCH FUNCTION
 const fetchRecipes = () => {
+    //Use cached fetches if available so i dont run out of api calls
+ if(recipe.cousines) {}
+
     fetch(URL)
         .then(response => response.json())
         .then(data => {
@@ -20,6 +23,7 @@ const fetchRecipes = () => {
         })
         .catch(error => console.error('Error fetching the data:', error));
 };
+    //Use cached fetches if available so i dont run out of api
 
 // Fetch and cache recipes on page load
 document.addEventListener('DOMContentLoaded', fetchRecipes);
@@ -82,11 +86,26 @@ const handleRecipeData = (recipe) => {
                 ${recipe.extendedIngredients?.map(ingredient => `<li>${ingredient.name}</li>`).join('') || '<li>Unknown Ingredients</li>'}
             </ul>
         </div>
+        
     `;
+
 
     container.appendChild(recipeCard);
 };
+console.log(recipes[Math.floor(Math.random() * recipes.length)]);
 
+function addToFavorites(recipeTitle) {
+    // Get existing favorites from local storage or initialize an empty array
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // Add the new recipe to the favorites array
+    favorites.push(recipeTitle);
+
+    // Save the updated favorites array to local storage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    alert(`${recipeTitle} has been added to your favorites!`);
+}
 function sortTime() {
     document.getElementById("hightolowbtn").addEventListener("click", () => {
         // Create a copy of the recipes array and sort by time
@@ -113,4 +132,34 @@ function sortPrice() {
         // Append sorted recipes
         sortedRecipes.forEach(recipe => handleRecipeData(recipe));
     });
+}function randomize() {
+    document.getElementById("random-btn").addEventListener("click", () => {
+        console.log("Fetching 4 new random recipes...");
+
+        // Fetch new recipes from the API (DO NOT use cached ones)
+        fetch(URL)
+            .then(response => response.json())
+            .then(data => {
+                console.log("New random recipes:", data.recipes);
+                
+                recipes = data.recipes; // Update global variable
+                localStorage.setItem("recipes", JSON.stringify(recipes)); // Cache the new recipes
+                
+                // Clear and display new recipes
+                const container = document.getElementById("container");
+                container.innerHTML = "";
+                recipes.forEach(recipe => handleRecipeData(recipe));
+            })
+            .catch(error => console.error("Error fetching new recipes:", error));
+    });
 }
+
+// Run when page loads
+document.addEventListener("DOMContentLoaded", () => {
+    fetchRecipes();  // Load initial recipes
+    randomize();     // Ensure the button fetches new ones
+    sortTime();
+    sortPrice();
+});
+// Fetch recipes when page is loaded
+// Call randomize to attach event listener

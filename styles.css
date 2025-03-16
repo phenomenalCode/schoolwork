@@ -67,6 +67,28 @@ button:hover {
   color: white;
 }
 
+/* Special Button Styles */
+.popular-btn {
+  background: #FF6589; /* Red for Popularity */
+  color: white;
+}
+
+.cooking-time-btn:hover,
+.popular-btn:hover,
+.price-btn:hover,
+.random-btn:hover {
+  background: #FF6589; /* Red hover */
+  color: white;
+}
+
+.cooking-time-btn:active,
+.popular-btn:active,
+.price-btn:active,
+.random-btn:active {
+  background: #FF6589; /* Red active */
+  color: white;
+}
+
 /* Recipe Grid */
 
 .recipes {
@@ -76,6 +98,7 @@ button:hover {
   justify-content: center;
   padding: 20px;
 }
+
 .card {
   background: white;
   padding: 16px; /* Increased padding */
