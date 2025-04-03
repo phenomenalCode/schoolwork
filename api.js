@@ -4,7 +4,6 @@ let recipes = [];
 // Fetch recipes from the API STANDARD FETCH FUNCTION
 const fetchRecipes = () => {
     //Use cached fetches if available so i dont run out of api calls
- if(recipe.cousines) {}
 
     fetch(URL)
         .then(response => response.json())
